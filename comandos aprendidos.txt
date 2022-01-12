@@ -1,0 +1,34 @@
+Comandos linux
+
+Buscar imagenes de 'mariadb' dentro del docker hub
+$ docker search mariadb
+
+Eliminar contenedor específico
+$ docker container rm $container_id
+
+Creación de red dentro de docker
+$ docker network create minetwork0
+
+Creación/ejecución/descarga de imagen y contenerdor de 'mariadb' y creación de usuario y contraseña para contenedor y base de datos y asignación de contraseña a usuario root
+$ docker run --detach --network minetwork0 --name mimariadb0 --env MARIADB_USER=miusuario0 --env MARIADB_PASSWORD=mipassword0 --env MARIADB_ROOT_PASSWORD=mipassword0  mariadb
+
+Copiar archivo nation.sql dentro de contenedor 'mimariadb0' en ruta '/tmp'
+$ docker cp ../nation.sql mimariadb0:/tmp
+
+Acceder a base de datos mariadb con usuario root
+$ mysql -u root -p
+
+Conceder TODOS los permisos al usuario 'miusuario0' con el usuario root
+$ grant all privileges on *.* to 'miusuario0'@'%' with grant option;
+
+Acceder a base de datos mariadb con usuario miusuario0
+$ mysql -u miusuario0 -p
+
+Cargar script de sql dentro base de datos mariadb
+$ source /tmp/nation.sql;
+
+Comando para mostrar bases de datos con permiso
+$ show databases;
+
+Comando para mostrar tablase de la base de datos con permiso
+$ show tables;
