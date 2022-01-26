@@ -13,10 +13,10 @@ Eliminación de red dentro de docker
 $ docker network rm minetwork0
 
 Creación/ejecución/descarga de imagen y contenedor de 'mariadb' y creación de usuario y contraseña para contenedor y base de datos y asignación de contraseña a usuario root y puerto 13306 en ip local
-$ docker run --detach --name mimariadb0 --env MARIADB_USER=miusuario0 --env MARIADB_PASSWORD=mipassword0 --env MARIADB_ROOT_PASSWORD=mipassword0 -p 13306:3306  mariadb
+$ docker run --detach --network minetwork0 --name mimariadb0 --env MARIADB_USER=miusuario0 --env MARIADB_PASSWORD=mipassword0 --env MARIADB_ROOT_PASSWORD=mipassword0 -p 13306:3306  mariadb
 
 Sin network
-$ docker run --detach --network minetwork0 --name mimariadb0 --env MARIADB_USER=miusuario0 --env MARIADB_PASSWORD=mipassword0 --env MARIADB_ROOT_PASSWORD=mipassword0 -p 13306:3306  mariadb
+$ docker run --detach --name mimariadb0 --env MARIADB_USER=miusuario0 --env MARIADB_PASSWORD=mipassword0 --env MARIADB_ROOT_PASSWORD=mipassword0 -p 13306:3306  mariadb
 
 Copiar archivo nation.sql dentro de contenedor 'mimariadb0' en ruta '/tmp'
 $ docker cp ../nation.sql mimariadb0:/tmp
