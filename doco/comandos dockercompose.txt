@@ -1,0 +1,14 @@
+--------------------------------------------
+-- Comandos para construir docker-compose --
+--------------------------------------------
+Comando para construir imagen docker en carpeta actual, necesario el archivo Dockerfile
+$ docker build .
+
+Comando para construir imagen docker en carpeta actual con nombre y version definida, necesario el archivo Dockerfile
+$ docker build -t trmx/mimariadb:1.0 .
+
+Comando para ejecutar/crear/nombrar contenedor a partir de imagen y version
+$ docker run -d --name mimariadb1.0 -p 13306:3306 trmx/mimariadb:1.0
+
+Comando para interactuar dentro del contenedor en linea de comando
+$ docker exec -it mimariadb1.0 bash
