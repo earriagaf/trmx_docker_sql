@@ -11,6 +11,8 @@ services:
       - MARIADB_USER=miusuario0 #variable de nuevo usuario en mysql
       - MARIADB_PASSWORD=mipassword0 #variable password de nuevo usuario en mysql
       - MARIADB_ROOT_PASSWORD=mipassword0 #variable de password de usuario root en mysql
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
 
   adminer:
     image: adminer
