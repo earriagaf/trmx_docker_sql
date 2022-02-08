@@ -5,7 +5,7 @@ Comando para construir imagen docker en carpeta actual, necesario el archivo doc
 $ docker-compose up
 
 Comando para construir imagen(es) docker en carpeta actual en segundo plano, necesario el archivo docker-compose.yml
-$ docker-compose up -d
+$ docker-compose -p midocker-compose0 up -d
 
 Comando para interactuar dentro del contenedor en linea de comando
 $ docker exec -it mimariadb1.0 bash
