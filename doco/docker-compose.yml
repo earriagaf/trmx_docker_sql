@@ -8,11 +8,11 @@ services:
     ports: #exposicion de puertos
       - 13306:3306 #puerto 13306 de maquina local hacia puerto 3306 dentro de contenedor mariadb
     environment: #exposicion de variables de ambiente del contenedor
-      - MARIADB_USER=mytruser1 #variable de nuevo usuario en mysql
-      - MARIADB_PASSWORD=mytruser1 #variable password de nuevo usuario en mysql
-      - MARIADB_ROOT_PASSWORD=root #variable de password de usuario root en mysql
+      - MARIADB_USER=miusuario #variable de nuevo usuario en mariadb
+      - MARIADB_PASSWORD=mipassword #variable password de nuevo usuario en mariadb
+      - MARIADB_ROOT_PASSWORD=mipassword #variable de password de usuario root en mariadb
     volumes:
-      - ./database:/docker-entrypoint-initdb.d
+      - ./database/init:/docker-entrypoint-initdb.d
 
   adminer:
     image: adminer

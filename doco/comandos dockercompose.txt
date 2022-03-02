@@ -5,10 +5,10 @@ Comando para construir imagen docker en carpeta actual, necesario el archivo doc
 $ docker-compose up
 
 Comando para construir imagen(es) docker en carpeta actual en segundo plano, necesario el archivo docker-compose.yml
-$ docker-compose -p midocker-compose0 up -d
+$ docker-compose -p midocker-compose_mimariadb0 up -d
 
 Comando para interactuar dentro del contenedor en linea de comando
-$ docker exec -it mimariadb1.0 bash
+$ docker exec -it mimariadb0 bash
 
 Conceder TODOS los permisos a la base de datos nation al usuario 'miusuario0' con el usuario root
-$ grant all privileges on nation.* to 'miusuario0'@'%' with grant option;
+$ grant all privileges on nation.* to 'miusuario'@'%' with grant option;
