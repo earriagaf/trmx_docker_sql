@@ -3,14 +3,14 @@ version: '3.9'
 # definicion de servicios/contenedores
 services:
   db:
-    image: mariadb #imagen mariadb:latest
-    container_name: mimariadb0 #nombre de contenedor con imagen de mariadb
-    ports: #exposicion de puertos
-      - 13306:3306 #puerto 13306 de maquina local hacia puerto 3306 dentro de contenedor mariadb
-    environment: #exposicion de variables de ambiente del contenedor
-      - MARIADB_USER=miusuario #variable de nuevo usuario en mariadb
-      - MARIADB_PASSWORD=mipassword #variable password de nuevo usuario en mariadb
-      - MARIADB_ROOT_PASSWORD=mipassword #variable de password de usuario root en mariadb
+    image: mariadb # imagen mariadb:latest
+    container_name: mimariadb0 # nombre de contenedor con imagen de mariadb
+    ports: # exposicion de puertos
+      - 13306:3306 # puerto 13306 de maquina local hacia puerto 3306 dentro de contenedor mariadb
+    environment: # exposicion de variables de ambiente del contenedor
+      - MARIADB_USER=miusuario # variable de nuevo usuario en mariadb
+      - MARIADB_PASSWORD=mipassword # variable password de nuevo usuario en mariadb
+      - MARIADB_ROOT_PASSWORD=mipassword # variable de password de usuario root en mariadb
     volumes:
       - ./database/init:/docker-entrypoint-initdb.d
 
